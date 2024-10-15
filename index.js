@@ -1,9 +1,9 @@
 const { Pool } = require('pg');
 const pool = new Pool({
     user: "postgres",
-    host: 'db.mgampbhmlnalxohuobpr.supabase.co',
+    host: '',
     database: "postgres",
-    password: 'gplVhDuxLDMeBKxs',
+    password: '',
     port: 5432,
 });
 let scanlogs = []
@@ -19,7 +19,7 @@ function getcity(){
        setTimeout(()=>{
         let lat = scanlogs[index].scan_1_location[0]
         let lon = scanlogs[index].scan_1_location[1]
-        fetch(`https://api.geoapify.com/v1/geocode/reverse?lat=${lat}&lon=${lon}&apiKey=d5c9c5f68ffa4f3ea831255e056215de`)
+        fetch(`https://api.geoapify.com/v1/geocode/reverse?lat=${lat}&lon=${lon}&apiKey=123123`)
           .then(response => response.json())
           .then(async result =>{
             console.log(result.features[0].properties.state)
